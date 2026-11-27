@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inspity | Your Vision. Our Signature.</title>
+<meta name="description" content="Custom printing and branded corporate giveaways.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--bg:#16181c;--bg2:#2a2f37;--tx:#f0f1f3;--mut:#a3a9b3;--ov:22,24,28;--bd:#3b414b;--s1:#1c9be6;--s2:#1c9be6;--s3:#e4202e;--acc:#1c9be6}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:'Jost','IBM Plex Sans Arabic',sans-serif;line-height:1.75;font-weight:400}
+[dir=rtl] body{font-family:'IBM Plex Sans Arabic','Jost',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond','Amiri',serif;font-weight:600}
+[dir=rtl] h2,[dir=rtl] h3{font-family:'Amiri','Cormorant Garamond',serif;font-weight:700}
+.hero h1{font-weight:600;letter-spacing:.01em}.slogan{font-family:'Cormorant Garamond',serif!important}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;background:rgba(var(--ov),.85);backdrop-filter:blur(8px)}
+nav .b{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2em}
+nav img{width:36px;height:36px;border-radius:50%}
+nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:6px 14px;border-radius:20px;cursor:pointer}
+.stripes{display:flex;gap:6px;margin:18px 0}
+.stripes i{display:block;width:34px;height:7px;transform:skewX(-20deg)}
+.stripes i:nth-child(1){background:var(--s1)}.stripes i:nth-child(2){background:var(--s2)}.stripes i:nth-child(3){background:var(--s3)}
+.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),url(gift.jpg) center/cover}
+[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),url(gift.jpg) center/cover}
+.hero h1{font-size:clamp(40px,7vw,80px);line-height:1.15;font-weight:600;max-width:11em}
+.hero p{color:var(--mut);max-width:34em;margin-top:14px;font-size:18px}
+section{padding:90px 6vw}
+h2{font-size:38px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
+.card{background:var(--bg2);border-radius:14px;overflow:hidden;border:1px solid var(--bd)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card div{padding:18px}.card h3{font-size:24px}.card p{color:var(--mut);font-size:15px}
+.about{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;border-radius:14px}.about p{color:var(--mut);margin-top:14px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.contact{text-align:center}
+.contact p{color:var(--mut);margin:12px 0 24px}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.links a{color:var(--tx);text-decoration:none;border:1px solid var(--bd);padding:10px 22px;border-radius:30px}
+.links a:hover{border-color:var(--acc);color:var(--acc)}
+footer{text-align:center;color:var(--mut);padding:30px;font-size:14px;border-top:1px solid var(--bd)}
+[dir=rtl] .slogan{text-align:right;unicode-bidi:isolate}
+.stripes{direction:ltr}[dir=rtl] .stripes{justify-content:flex-end}
+html[data-theme=light]{--bg:#f6f1e7;--bg2:#e6dcc8;--tx:#16181d;--mut:#5b5a55;--ov:246,241,231;--bd:#cfc3aa;--s2:#16181d;--acc:#e4202e}
+html[data-theme=light] .links a:hover{color:var(--acc)}
+.tools{display:flex;gap:10px;align-items:center}
+</style>
+</head>
+<body>
+<nav><div class="b"><img src="logo.jpg" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
+<header class="hero"><div>
+<h1 dir="ltr" class="slogan">Your Vision. Our Signature.</h1>
+<div class="stripes"><i></i><i></i><i></i></div>
+<p data-en="Custom printing and branded giveaways, made with attention to every detail." data-ar="طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.">Custom printing and branded giveaways, made with attention to every detail.</p>
+</div></header>
+<section id="products">
+<h2 data-en="What we make" data-ar="ما نصنعه">What we make</h2>
+<div class="grid">
+<div class="card"><img src="box.jpg" alt=""><div><h3 data-en="Giveaway boxes" data-ar="بوكسات الهدايا">Giveaway boxes</h3><p data-en="Notebook, pen, card holder and keychain, engraved with your name or logo." data-ar="نوت بوك وقلم وحامل كروت وميدالية، بحفر اسمك أو شعارك.">Notebook, pen, card holder and keychain, engraved with your name or logo.</p></div></div>
+<div class="card"><img src="calendar.jpg" alt=""><div><h3 data-en="Calendars" data-ar="التقويمات">Calendars</h3><p data-en="Desk and wall calendars that keep your brand in view all year." data-ar="تقويمات مكتب وحائط تبقي علامتك أمام العميل طوال السنة.">Desk and wall calendars that keep your brand in view all year.</p></div></div>
+<div class="card"><img src="set.jpg" alt=""><div><h3 data-en="Notebooks and pens" data-ar="نوت بوك وأقلام">Notebooks and pens</h3><p data-en="Custom covers, coated pages and all printing solutions." data-ar="أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة.">Custom covers, coated pages and all printing solutions.</p></div></div>
+</div></section>
+<section class="about">
+<img src="gift.jpg" alt="">
+<div><h2 data-en="Who we are" data-ar="من نحن">Who we are</h2>
+<p data-en="Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity." data-ar="انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.">Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.</p></div>
+</section>
+<section class="contact" id="contact">
+<h2 data-en="Contact" data-ar="تواصل معنا">Contact</h2>
+<p data-en="Tell us about your brand and we will prepare a proposal." data-ar="حدثنا عن علامتك ونجهز لك عرضًا.">Tell us about your brand and we will prepare a proposal.</p>
+<div class="links">
+<a href="https://wa.me/201026832972" dir="ltr">WhatsApp: +20 102 683 2972</a>
+<a href="mailto:inspity.eg@gmail.com" dir="ltr">inspity.eg@gmail.com</a>
+<a href="https://www.facebook.com/share/18vySZu6VG/">Facebook</a>
+<a href="https://www.instagram.com/inspity.eg">Instagram</a>
+<a href="https://www.youtube.com/@Inspity">YouTube</a>
+</div></section>
+<footer>© 2026 Inspity</footer>
+<script>
+const t=document.getElementById('theme'),R=document.documentElement;
+function setT(x){R.dataset.theme=x;t.textContent=x==='dark'?'☀':'☾';try{localStorage.setItem('th',x)}catch(e){}}
+setT((function(){try{return localStorage.getItem('th')||'dark'}catch(e){return 'dark'}})());
+t.onclick=()=>setT(R.dataset.theme==='dark'?'light':'dark');
+const b=document.getElementById('lang');let ar=false;
+b.onclick=()=>{ar=!ar;document.documentElement.lang=ar?'ar':'en';document.documentElement.dir=ar?'rtl':'ltr';
+document.querySelectorAll('[data-en]').forEach(e=>e.textContent=ar?e.dataset.ar:e.dataset.en);
+b.textContent=ar?'English':'العربية'}
+</script>
+</body></html>
