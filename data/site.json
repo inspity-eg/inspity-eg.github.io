@@ -1,8 +1,11 @@
 {
-  "slogan": "Your Vision. Our Signature.",
-  "hero_en": "Custom printing and branded giveaways. (edit test)",
-  "hero_ar": "طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.",
+  "logo": "/images/1-logo.jpg",
   "hero_image": "/images/2-gift.jpg",
+  "slogan": "Your Vision. Our Signature.",
+  "hero_en": "Custom printing and branded giveaways, made with attention to every detail.",
+  "hero_ar": "طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.",
+  "products_title_en": "What we make",
+  "products_title_ar": "ما نصنعه",
   "products": [
     {
       "image": "/images/3-box.jpg",
@@ -26,13 +29,11 @@
       "text_ar": "أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة."
     }
   ],
-  "products_title_en": "What we make",
-  "products_title_ar": "ما نصنعه",
+  "about_image": "/images/2-gift.jpg",
   "about_title_en": "Who we are",
   "about_title_ar": "من نحن",
   "about_text_en": "Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.",
   "about_text_ar": "انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.",
-  "about_image": "/images/2-gift.jpg",
   "contact_title_en": "Contact",
   "contact_title_ar": "تواصل معنا",
   "contact_text_en": "Tell us about your brand and we will prepare a proposal.",
@@ -43,6 +44,30 @@
   "facebook": "https://www.facebook.com/share/18vySZu6VG/",
   "instagram": "https://www.instagram.com/inspity.eg",
   "youtube": "https://www.youtube.com/@Inspity",
-  "logo": "/images/1-logo.jpg",
-  "footer": "© 2026 Inspity"
+  "footer": "© 2026 Inspity",
+  "services_title_en": "Our technologies",
+  "services_title_ar": "تقنياتنا",
+  "services": [
+    {
+      "image": "/images/7-fiber-laser.jpg",
+      "title_en": "Fiber laser engraving",
+      "title_ar": "الحفر بالفايبر ليزر",
+      "text_en": "Fine, permanent engraving on metal pens, keychains, card holders and more.",
+      "text_ar": "حفر دقيق ودائم على الأقلام المعدنية والميداليات وحوامل الكروت وغيرها."
+    },
+    {
+      "image": "/images/8-uv-printing.jpg",
+      "title_en": "UV printing",
+      "title_ar": "الطباعة بالـ UV",
+      "text_en": "Sharp full-colour prints with a lasting finish on pens, boxes, covers and gifts.",
+      "text_ar": "طباعة ملونة حادة بلمسة نهائية تدوم على الأقلام والبوكسات والأغلفة والهدايا."
+    },
+    {
+      "image": "/images/9-dtf-uv.jpg",
+      "title_en": "DTF UV",
+      "title_ar": "DTF UV",
+      "text_en": "Glossy, durable transfers for cups, notebooks and hard surfaces, in any quantity.",
+      "text_ar": "ملصقات لامعة ومتينة للأكواب والنوت بوك والأسطح الصلبة، بأي كمية."
+    }
+  ]
 }
