@@ -22,10 +22,10 @@ nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:6p
 .stripes{display:flex;gap:6px;margin:18px 0}
 .stripes i{display:block;width:34px;height:7px;transform:skewX(-20deg)}
 .stripes i:nth-child(1){background:var(--s1)}.stripes i:nth-child(2){background:var(--s2)}.stripes i:nth-child(3){background:var(--s3)}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:100px 6vw 60px}
-.hero img.himg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--bd)}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:90px}}
-.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.15;font-weight:600;max-width:11em}
+.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--hi) center/cover}
+[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--hi) center/cover}
+.hero h1{font-size:clamp(40px,7vw,80px);line-height:1.15;font-weight:600;max-width:11em}
+#grid .card img{height:200px;object-fit:cover}
 .hero p{color:var(--mut);max-width:34em;margin-top:14px;font-size:18px}
 section{padding:90px 6vw}
 h2{font-size:38px}
@@ -47,21 +47,59 @@ footer{text-align:center;color:var(--mut);padding:30px;font-size:14px;border-top
 html[data-theme=light]{--bg:#f6f1e7;--bg2:#e6dcc8;--tx:#16181d;--mut:#5b5a55;--ov:246,241,231;--bd:#cfc3aa;--s2:#16181d;--acc:#e4202e}
 html[data-theme=light] .links a:hover{color:var(--acc)}
 .tools{display:flex;gap:10px;align-items:center}
+
+.page{display:none;padding-top:70px}.page.on{display:block}#p-home{padding-top:0}
+.ph{padding:60px 6vw 0}
+.ph p{color:var(--mut);margin-top:10px;max-width:40em}
+.gal{columns:3 260px;column-gap:18px;margin-top:30px}
+.gal img{width:100%;height:auto;display:block;margin-bottom:18px;border-radius:14px;border:1px solid var(--bd);cursor:zoom-in}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:20;align-items:center;justify-content:center;padding:20px}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:10px}
+form{max-width:640px;margin-top:30px;display:grid;gap:16px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.f2{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:14px;color:var(--mut)}
+input,select,textarea{font:inherit;background:var(--bg2);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:11px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
+textarea{min-height:120px;resize:vertical}
+.btn{font:inherit;cursor:pointer;background:var(--acc);color:#fff;border:0;border-radius:30px;padding:13px 28px;text-decoration:none;display:inline-block;text-align:center}
+.btn.o{background:none;border:1px solid var(--bd);color:var(--tx)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+#msg{padding:14px 18px;border-radius:12px;border:1px solid var(--bd);display:none}
+#msg.on{display:block}
+.cta{text-align:center;padding:50px 6vw}
+.hp{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}form{position:relative}
 </style>
 <script defer src="https://cdn.counter.dev/script.js" data-id="d7e138dd-500d-49fb-b7fd-efbfcec69749" data-utcoffset="2"></script>
 </head>
 <body>
 <nav><div class="b"><img id="logo" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
+<main>
+<div class="page on" id="p-home">
 <header class="hero"><div>
 <h1 dir="ltr" class="slogan" id="slogan"></h1>
 <div class="stripes"><i></i><i></i><i></i></div>
 <p id="hero"></p>
-</div><img id="himg" class="himg" alt=""></header>
+</div></header>
 <section id="products"><h2 id="pt"></h2><div class="grid" id="grid"></div></section>
 <section id="services"><h2 id="st"></h2><div class="grid" id="sgrid"></div></section>
-<section class="about"><img id="aimg" alt=""><div><h2 id="at"></h2><p id="atx"></p></div></section>
+<section class="about" id="about"><img id="aimg" alt="" loading="lazy" decoding="async"><div><h2 id="at"></h2><p id="atx"></p></div></section>
 <section class="contact" id="contact"><h2 id="ct"></h2><p id="ctx"></p><div class="links" id="links"></div></section>
+</div>
+<div class="page" id="p-gallery"><div class="ph"><h1 id="gt" style="font-size:44px"></h1></div><section style="padding-top:10px"><div class="gal" id="gal"></div></section></div>
+<div class="page" id="p-quote"><div class="ph"><h1 id="qt" style="font-size:44px"></h1><p id="qtx"></p></div>
+<section style="padding-top:10px"><form id="qf" novalidate>
+<input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+<div class="f2"><label><span data-l="name"></span><input name="name" required></label><label><span data-l="company"></span><input name="company"></label></div>
+<div class="f2"><label><span data-l="phone"></span><input name="phone" type="tel" dir="ltr"></label><label><span data-l="email"></span><input name="email" type="email" dir="ltr"></label></div>
+<div class="f2"><label><span data-l="item"></span><select name="product" id="item"></select></label><label><span data-l="qty"></span><input name="quantity" inputmode="numeric"></label></div>
+<label><span data-l="details"></span><textarea name="details" required></textarea></label>
+<div id="msg"></div>
+<div class="acts"><button class="btn" type="submit" id="send"></button><a class="btn o" id="wa" target="_blank" rel="noopener"></a><a class="btn o" id="em"></a></div>
+</form></section></div>
+</main>
 <footer id="foot"></footer>
+<div id="lb"><img alt=""></div>
 <script>
 const t=document.getElementById('theme'),R=document.documentElement;
 function setT(x){R.dataset.theme=x;t.textContent=x==='dark'?'☀':'☾';try{localStorage.setItem('th',x)}catch(e){}}
@@ -70,26 +108,66 @@ t.onclick=()=>setT(R.dataset.theme==='dark'?'light':'dark');
 const b=document.getElementById('lang');let ar=false,D=null;
 const $=id=>document.getElementById(id);
 function L(k){return D[k+(ar?'_ar':'_en')]}
+const T={
+ pages:[['home','Home','الرئيسية'],['gallery','Gallery','المعرض'],['quote','Request a quote','اطلب عرض'],['about','About','من نحن'],['contact','Contact','تواصل']],
+ name:['Your name','الاسم'],company:['Company','الشركة'],phone:['Phone / WhatsApp','الموبايل / واتساب'],email:['Email','الإيميل'],
+ item:['What do you need?','محتاج إيه؟'],qty:['Quantity','الكمية'],details:['Details (logo, colours, deadline)','التفاصيل (اللوجو، الألوان، الميعاد)'],
+ send:['Send request','ابعت الطلب'],wa:['Send on WhatsApp','ابعت واتساب'],em:['Send by email','ابعت إيميل'],
+ sending:['Sending...','جاري الإرسال...'],ok:['Thank you. We received your request and will reply soon.','شكرًا لك. استلمنا طلبك وهنرد عليك قريب.'],
+ fail:['Could not send the form. Please use WhatsApp or email below.','تعذر إرسال النموذج. من فضلك استخدم واتساب أو الإيميل تحت.'],
+ need:['Please add your name and details.','من فضلك اكتب اسمك والتفاصيل.'],other:['Other / not sure','أخرى / مش متأكد'],
+ cta:['Request a quote','اطلب عرض سعر'],cta2t:['Ready to start?','جاهز نبدأ؟'],cta2p:['Send us your idea and we will price it.','ابعتلنا فكرتك وهنسعّرها.']
+};
+function tr(k){return T[k][ar?1:0]}
+function page(){const h=(location.hash?location.hash.replace('#/',''):(new URLSearchParams(location.search).get('p')||'home'));const ok=T.pages.some(p=>p[0]===h)?h:'home';
+ const pg=(ok==='about'||ok==='contact')?'home':ok;
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id==='p-'+pg));
+  if(ok==='about'||ok==='contact'){const e=$(ok);e&&e.scrollIntoView()}else window.scrollTo(0,0)}
+window.addEventListener('hashchange',page);
+function qsum(){const f=$('qf'),v=n=>f.elements[n].value.trim();
+ return 'Inspity quote request\nName: '+v('name')+'\nCompany: '+v('company')+'\nPhone: '+v('phone')+'\nEmail: '+v('email')+'\nItem: '+v("product")+'\nQuantity: '+v('quantity')+'\nDetails: '+v('details')}
+function links(){$('wa').href='https://wa.me/'+D.whatsapp+'?text='+encodeURIComponent(qsum());
+ $('em').href='mailto:'+D.email+'?subject='+encodeURIComponent('Quote request')+'&body='+encodeURIComponent(qsum())}
 function render(){
  if(!D)return;
  $('slogan').textContent=D.slogan;$('hero').textContent=L('hero');
  $('pt').textContent=L('products_title');$('at').textContent=L('about_title');$('atx').textContent=L('about_text');
  $('ct').textContent=L('contact_title');$('ctx').textContent=L('contact_text');$('foot').textContent=D.footer;
+ $('gt').textContent=L('gallery_title');$('qt').textContent=L('quote_title');$('qtx').textContent=L('quote_text');
  $('logo').src=D.logo;$('aimg').src=D.about_image;
- $('himg').src=D.hero_image;$('st').textContent=L('services_title');
+ document.querySelector('.hero').style.setProperty('--hi','url('+D.hero_image+')');$('st').textContent=L('services_title');
  [['grid','products'],['sgrid','services']].forEach(function(z){const g=$(z[0]);g.textContent='';
  (D[z[1]]||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
   const i=document.createElement('img');i.alt='';i.src=p.image;const d=document.createElement('div');
   const h=document.createElement('h3');h.textContent=ar?p.title_ar:p.title_en;
   const q=document.createElement('p');q.textContent=ar?p.text_ar:p.text_en;
   d.append(h,q);c.append(i,d);g.append(c)})});
+ const gl=$('gal');gl.textContent='';(D.gallery||[]).forEach(x=>{const i=document.createElement('img');i.src=x.image;i.alt='';i.loading='lazy';i.onclick=()=>{$('lb').firstChild.src=x.image;$('lb').classList.add('on')};gl.append(i)});
+  document.querySelectorAll('[data-l]').forEach(s=>s.textContent=tr(s.dataset.l));
+ const it=$('item'),cur=it.value;it.textContent='';[].concat(D.products||[],D.services||[]).forEach(p=>{const o=document.createElement('option');const n=ar?p.title_ar:p.title_en;o.value=p.title_en;o.textContent=n;it.append(o)});
+ const o=document.createElement('option');o.value='Other';o.textContent=tr('other');it.append(o);if(cur)it.value=cur;
+ $('send').textContent=tr('send');$('wa').textContent=tr('wa');$('em').textContent=tr('em');
+ 
  const l=$('links');l.textContent='';
- [['https://wa.me/'+D.whatsapp,'WhatsApp: '+D.whatsapp_label,1],['mailto:'+D.email,D.email,1],[D.facebook,'Facebook'],[D.instagram,'Instagram'],[D.youtube,'YouTube']].forEach(x=>{
+ [['https://wa.me/'+D.whatsapp,'WhatsApp: '+D.whatsapp_label,1],['mailto:'+D.email,D.email,1],[D.facebook,'Facebook'],[D.instagram,'Instagram'],[D.youtube,'YouTube'],['#/gallery',ar?'المعرض':'Gallery'],['#/quote',tr('cta')]].forEach(x=>{
   if(!x[0]||/^(https:\/\/wa.me\/|mailto:)$/.test(x[0]))return;
   const a=document.createElement('a');a.href=x[0];a.textContent=x[1];if(x[2])a.dir='ltr';l.append(a)});
- b.textContent=ar?'English':'العربية';
+ b.textContent=ar?'English':'العربية';links();page();
 }
 b.onclick=()=>{ar=!ar;R.lang=ar?'ar':'en';R.dir=ar?'rtl':'ltr';render()};
+document.querySelector('nav .b').style.cursor='pointer';document.querySelector('nav .b').onclick=()=>{location.hash='#/home'};
+$('lb').onclick=()=>$('lb').classList.remove('on');
+$('qf').addEventListener('input',()=>D&&links());
+$('qf').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,m=$('msg');m.className='on';
+ if(!f.elements.name.value.trim()||!f.elements.details.value.trim()){m.textContent=tr('need');return}
+ if(f.elements._honey.value){return}
+ m.textContent=tr('sending');$('send').disabled=true;
+ try{const fd=new FormData(f);fd.append('_subject','Inspity website: quote request');fd.append('_captcha','false');fd.append('_template','table');
+  const r=await fetch('https://formsubmit.co/ajax/'+D.form_email,{method:'POST',headers:{Accept:'application/json'},body:fd});
+  const j=await r.json();if(r.ok&&(j.success===true||j.success==='true')){m.textContent=tr('ok');f.reset()}else throw 0}
+ catch(x){m.textContent=tr('fail')}
+ $('send').disabled=false;links()});
+(function(){const q=new URLSearchParams(location.search);if(q.get('th'))setT(q.get('th'));if(q.get('ar')){ar=true;R.lang='ar';R.dir='rtl'}})();
 fetch('data/site.json?v='+Date.now()).then(r=>r.json()).then(j=>{D=j;render()});
 </script>
 </body></html>
