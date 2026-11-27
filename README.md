@@ -1,0 +1,1 @@
+# inspity-eg.github.io
