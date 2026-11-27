@@ -49,7 +49,7 @@
   "services_title_ar": "تقنياتنا",
   "services": [
     {
-      "image": "/images/3-7-pp-fiber-v2.jpg",
+      "image": "/images/1-fiber-gemini.jpg",
       "title_en": "Fiber laser engraving",
       "title_ar": "الحفر بالفايبر ليزر",
       "text_en": "Fine, permanent engraving on metal pens, keychains, card holders and more.",
@@ -89,7 +89,7 @@
       "image": "/images/1-hero-calnote.jpg"
     },
     {
-      "image": "/images/3-7-pp-fiber-v2.jpg"
+      "image": "/images/1-fiber-gemini.jpg"
     },
     {
       "image": "/images/8-uv-printing.jpg"
