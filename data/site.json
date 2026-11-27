@@ -27,6 +27,27 @@
       "title_ar": "نوت بوك وأقلام",
       "text_en": "Custom covers, coated pages and all printing solutions.",
       "text_ar": "أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة."
+    },
+    {
+      "image": "/images/1-card-crystal.jpg",
+      "title_en": "Crystal awards",
+      "title_ar": "الدروع الكريستال",
+      "text_en": "Engraved crystal shields and awards for events, teams and partners.",
+      "text_ar": "دروع وكؤوس كريستال محفورة للمناسبات والفرق والشركاء."
+    },
+    {
+      "image": "/images/2-card-kosha.jpg",
+      "title_en": "Coated paper printing",
+      "title_ar": "طباعة الكوشيه",
+      "text_en": "Brochures, catalogs and flyers on glossy coated paper.",
+      "text_ar": "بروشورات وكتالوجات وفلايرز على ورق كوشيه لامع."
+    },
+    {
+      "image": "/images/3-card-officesign.jpg",
+      "title_en": "Office signs",
+      "title_ar": "يفط المكتب",
+      "text_en": "Logo wall signs, reception signs and door nameplates for your office.",
+      "text_ar": "يفط شعار للحائط والاستقبال ولوحات أبواب لمكتبك."
     }
   ],
   "about_image": "/images/2-gift.jpg",
