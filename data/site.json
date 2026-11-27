@@ -75,6 +75,13 @@
       "title_ar": "كروت NFC",
       "text_en": "Smart cards that share your details with one tap, with your name or logo.",
       "text_ar": "كروت ذكية تشارك بياناتك بلمسة واحدة، بحفر اسمك أو شعارك."
+    },
+    {
+      "image": "/images/12-design-booking.jpg",
+      "title_en": "Book design and printing",
+      "title_ar": "احجز التصميم والطباعة",
+      "text_en": "Tell us what you need. We design it with you, then print and deliver.",
+      "text_ar": "قولنا محتاج إيه. نصممه معاك، وبعدين نطبعه ونسلمه."
     }
   ]
 }
