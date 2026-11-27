@@ -22,8 +22,8 @@ nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:6p
 .stripes{display:flex;gap:6px;margin:18px 0}
 .stripes i{display:block;width:34px;height:7px;transform:skewX(-20deg)}
 .stripes i:nth-child(1){background:var(--s1)}.stripes i:nth-child(2){background:var(--s2)}.stripes i:nth-child(3){background:var(--s3)}
-.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),url(gift.jpg) center/cover}
-[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),url(gift.jpg) center/cover}
+.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g) center/cover}
+[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g) center/cover}
 .hero h1{font-size:clamp(40px,7vw,80px);line-height:1.15;font-weight:600;max-width:11em}
 .hero p{color:var(--mut);max-width:34em;margin-top:14px;font-size:18px}
 section{padding:90px 6vw}
@@ -49,7 +49,7 @@ html[data-theme=light] .links a:hover{color:var(--acc)}
 </style>
 </head>
 <body>
-<nav><div class="b"><img src="logo.jpg" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
+<nav><div class="b"><img data-i="logo" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
 <header class="hero"><div>
 <h1 dir="ltr" class="slogan">Your Vision. Our Signature.</h1>
 <div class="stripes"><i></i><i></i><i></i></div>
@@ -58,12 +58,12 @@ html[data-theme=light] .links a:hover{color:var(--acc)}
 <section id="products">
 <h2 data-en="What we make" data-ar="ما نصنعه">What we make</h2>
 <div class="grid">
-<div class="card"><img src="box.jpg" alt=""><div><h3 data-en="Giveaway boxes" data-ar="بوكسات الهدايا">Giveaway boxes</h3><p data-en="Notebook, pen, card holder and keychain, engraved with your name or logo." data-ar="نوت بوك وقلم وحامل كروت وميدالية، بحفر اسمك أو شعارك.">Notebook, pen, card holder and keychain, engraved with your name or logo.</p></div></div>
-<div class="card"><img src="calendar.jpg" alt=""><div><h3 data-en="Calendars" data-ar="التقويمات">Calendars</h3><p data-en="Desk and wall calendars that keep your brand in view all year." data-ar="تقويمات مكتب وحائط تبقي علامتك أمام العميل طوال السنة.">Desk and wall calendars that keep your brand in view all year.</p></div></div>
-<div class="card"><img src="set.jpg" alt=""><div><h3 data-en="Notebooks and pens" data-ar="نوت بوك وأقلام">Notebooks and pens</h3><p data-en="Custom covers, coated pages and all printing solutions." data-ar="أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة.">Custom covers, coated pages and all printing solutions.</p></div></div>
+<div class="card"><img data-i="box" alt=""><div><h3 data-en="Giveaway boxes" data-ar="بوكسات الهدايا">Giveaway boxes</h3><p data-en="Notebook, pen, card holder and keychain, engraved with your name or logo." data-ar="نوت بوك وقلم وحامل كروت وميدالية، بحفر اسمك أو شعارك.">Notebook, pen, card holder and keychain, engraved with your name or logo.</p></div></div>
+<div class="card"><img data-i="calendar" alt=""><div><h3 data-en="Calendars" data-ar="التقويمات">Calendars</h3><p data-en="Desk and wall calendars that keep your brand in view all year." data-ar="تقويمات مكتب وحائط تبقي علامتك أمام العميل طوال السنة.">Desk and wall calendars that keep your brand in view all year.</p></div></div>
+<div class="card"><img data-i="set" alt=""><div><h3 data-en="Notebooks and pens" data-ar="نوت بوك وأقلام">Notebooks and pens</h3><p data-en="Custom covers, coated pages and all printing solutions." data-ar="أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة.">Custom covers, coated pages and all printing solutions.</p></div></div>
 </div></section>
 <section class="about">
-<img src="gift.jpg" alt="">
+<img data-i="gift" alt="">
 <div><h2 data-en="Who we are" data-ar="من نحن">Who we are</h2>
 <p data-en="Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity." data-ar="انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.">Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.</p></div>
 </section>
@@ -88,4 +88,4 @@ b.onclick=()=>{ar=!ar;document.documentElement.lang=ar?'ar':'en';document.docume
 document.querySelectorAll('[data-en]').forEach(e=>e.textContent=ar?e.dataset.ar:e.dataset.en);
 b.textContent=ar?'English':'العربية'}
 </script>
-</body></html>
+<script src="images-a.js"></script><script src="images-b.js"></script><script src="images-c.js"></script></body></html>
