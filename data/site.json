@@ -1,6 +1,6 @@
 {
   "logo": "/images/1-logo.jpg",
-  "hero_image": "/images/1-hero-calnote.jpg",
+  "hero_image": "/images/1-hero-scene.jpg",
   "slogan": "Your Vision. Our Signature.",
   "hero_en": "Custom printing and branded giveaways, made with attention to every detail.",
   "hero_ar": "طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.",
@@ -86,7 +86,7 @@
   ],
   "gallery": [
     {
-      "image": "/images/1-hero-calnote.jpg"
+      "image": "/images/1-hero-scene.jpg"
     },
     {
       "image": "/images/1-fiber-gemini.jpg"
