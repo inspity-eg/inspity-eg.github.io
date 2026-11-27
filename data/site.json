@@ -1,8 +1,11 @@
 {
+  "logo": "/images/1-logo.jpg",
+  "hero_image": "/images/10-hh-hero.jpg",
   "slogan": "Your Vision. Our Signature.",
   "hero_en": "Custom printing and branded giveaways, made with attention to every detail.",
   "hero_ar": "طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.",
-  "hero_image": "/images/10-hh-hero.jpg",
+  "products_title_en": "What we make",
+  "products_title_ar": "ما نصنعه",
   "products": [
     {
       "image": "/images/2-pp-box.jpg",
@@ -26,9 +29,27 @@
       "text_ar": "أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة."
     }
   ],
+  "about_image": "/images/2-gift.jpg",
+  "about_title_en": "Who we are",
+  "about_title_ar": "من نحن",
+  "about_text_en": "Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.",
+  "about_text_ar": "انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.",
+  "contact_title_en": "Contact",
+  "contact_title_ar": "تواصل معنا",
+  "contact_text_en": "Tell us about your brand and we will prepare a proposal.",
+  "contact_text_ar": "حدثنا عن علامتك ونجهز لك عرضًا.",
+  "whatsapp": "201026832972",
+  "whatsapp_label": "+20 102 683 2972",
+  "email": "inspity.eg@gmail.com",
+  "facebook": "https://www.facebook.com/share/18vySZu6VG/",
+  "instagram": "https://www.instagram.com/inspity.eg",
+  "youtube": "https://www.youtube.com/@Inspity",
+  "footer": "© 2026 Inspity",
+  "services_title_en": "Our technologies",
+  "services_title_ar": "تقنياتنا",
   "services": [
     {
-      "image": "/images/7-pp-fiber.jpg",
+      "image": "/images/3-7-pp-fiber-v2.jpg",
       "title_en": "Fiber laser engraving",
       "title_ar": "الحفر بالفايبر ليزر",
       "text_en": "Fine, permanent engraving on metal pens, keychains, card holders and more.",
@@ -63,25 +84,31 @@
       "text_ar": "قولنا محتاج إيه. نصممه معاك، وبعدين نطبعه ونسلمه."
     }
   ],
-  "services_title_en": "Our technologies",
-  "services_title_ar": "تقنياتنا",
-  "products_title_en": "What we make",
-  "products_title_ar": "ما نصنعه",
-  "about_title_en": "Who we are",
-  "about_title_ar": "من نحن",
-  "about_text_en": "Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.",
-  "about_text_ar": "انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.",
-  "about_image": "/images/2-gift.jpg",
-  "contact_title_en": "Contact",
-  "contact_title_ar": "ابدا تجربتك",
-  "contact_text_en": "Tell us about your brand and we will prepare a proposal.",
-  "contact_text_ar": "حدثنا عن شركتك ونجهز لك عرض خاص بك.",
-  "whatsapp": "201026832972",
-  "whatsapp_label": "+20 102 683 2972",
-  "email": "inspity.eg@gmail.com",
-  "facebook": "https://www.facebook.com/share/18vySZu6VG/",
-  "instagram": "https://www.instagram.com/inspity.eg",
-  "youtube": "https://www.youtube.com/@Inspity",
-  "logo": "/images/1-logo.jpg",
-  "footer": "© 2026 Inspity"
+  "gallery": [
+    {
+      "image": "/images/10-hh-hero.jpg"
+    },
+    {
+      "image": "/images/3-7-pp-fiber-v2.jpg"
+    },
+    {
+      "image": "/images/8-uv-printing.jpg"
+    },
+    {
+      "image": "/images/2-dtf-notebook.jpg"
+    },
+    {
+      "image": "/images/10-nfc-card.jpg"
+    },
+    {
+      "image": "/images/1-3-book-flat.jpg"
+    }
+  ],
+  "form_email": "inspity.eg@gmail.com",
+  "quote_title_en": "Request a quote",
+  "quote_title_ar": "اطلب عرض سعر",
+  "quote_text_en": "Tell us what you need. We reply within one working day.",
+  "quote_text_ar": "قولنا محتاج إيه وهنرد عليك خلال يوم عمل.",
+  "gallery_title_en": "Gallery",
+  "gallery_title_ar": "معرض الأعمال"
 }
