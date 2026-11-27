@@ -1,0 +1,44 @@
+media:
+  input: images
+  output: /images
+  extensions: [jpg, jpeg, png, webp]
+content:
+  - name: site
+    label: Website
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - {name: slogan, label: Main slogan, type: string}
+      - {name: hero_en, label: Intro text (English), type: text}
+      - {name: hero_ar, label: Intro text (Arabic), type: text}
+      - {name: hero_image, label: Top banner photo, type: image}
+      - name: products
+        label: Products
+        type: object
+        list: true
+        fields:
+          - {name: image, label: Photo, type: image}
+          - {name: title_en, label: Title (English), type: string}
+          - {name: title_ar, label: Title (Arabic), type: string}
+          - {name: text_en, label: Text (English), type: text}
+          - {name: text_ar, label: Text (Arabic), type: text}
+      - {name: products_title_en, label: Products heading (English), type: string}
+      - {name: products_title_ar, label: Products heading (Arabic), type: string}
+      - {name: about_title_en, label: About heading (English), type: string}
+      - {name: about_title_ar, label: About heading (Arabic), type: string}
+      - {name: about_text_en, label: About text (English), type: text}
+      - {name: about_text_ar, label: About text (Arabic), type: text}
+      - {name: about_image, label: About photo, type: image}
+      - {name: contact_title_en, label: Contact heading (English), type: string}
+      - {name: contact_title_ar, label: Contact heading (Arabic), type: string}
+      - {name: contact_text_en, label: Contact text (English), type: text}
+      - {name: contact_text_ar, label: Contact text (Arabic), type: text}
+      - {name: whatsapp, label: WhatsApp number (digits only, with country code), type: string}
+      - {name: whatsapp_label, label: WhatsApp number as shown, type: string}
+      - {name: email, label: Email, type: string}
+      - {name: facebook, label: Facebook link, type: string}
+      - {name: instagram, label: Instagram link, type: string}
+      - {name: youtube, label: YouTube link, type: string}
+      - {name: logo, label: Logo, type: image}
+      - {name: footer, label: Footer text, type: string}
