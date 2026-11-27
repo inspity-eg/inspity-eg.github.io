@@ -22,15 +22,16 @@ nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:6p
 .stripes{display:flex;gap:6px;margin:18px 0}
 .stripes i{display:block;width:34px;height:7px;transform:skewX(-20deg)}
 .stripes i:nth-child(1){background:var(--s1)}.stripes i:nth-child(2){background:var(--s2)}.stripes i:nth-child(3){background:var(--s3)}
-.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g,none) center/cover}
-[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g,none) center/cover}
-.hero h1{font-size:clamp(40px,7vw,80px);line-height:1.15;font-weight:600;max-width:11em}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:100px 6vw 60px}
+.hero img.himg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--bd)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:90px}}
+.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.15;font-weight:600;max-width:11em}
 .hero p{color:var(--mut);max-width:34em;margin-top:14px;font-size:18px}
 section{padding:90px 6vw}
 h2{font-size:38px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
+.grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
 .card{background:var(--bg2);border-radius:14px;overflow:hidden;border:1px solid var(--bd)}
-.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card img{width:100%;height:auto;display:block}
 .card div{padding:18px}.card h3{font-size:24px}.card p{color:var(--mut);font-size:15px}
 .about{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .about img{width:100%;border-radius:14px}.about p{color:var(--mut);margin-top:14px}
@@ -54,8 +55,9 @@ html[data-theme=light] .links a:hover{color:var(--acc)}
 <h1 dir="ltr" class="slogan" id="slogan"></h1>
 <div class="stripes"><i></i><i></i><i></i></div>
 <p id="hero"></p>
-</div></header>
+</div><img id="himg" class="himg" alt=""></header>
 <section id="products"><h2 id="pt"></h2><div class="grid" id="grid"></div></section>
+<section id="services"><h2 id="st"></h2><div class="grid" id="sgrid"></div></section>
 <section class="about"><img id="aimg" alt=""><div><h2 id="at"></h2><p id="atx"></p></div></section>
 <section class="contact" id="contact"><h2 id="ct"></h2><p id="ctx"></p><div class="links" id="links"></div></section>
 <footer id="foot"></footer>
@@ -73,13 +75,13 @@ function render(){
  $('pt').textContent=L('products_title');$('at').textContent=L('about_title');$('atx').textContent=L('about_text');
  $('ct').textContent=L('contact_title');$('ctx').textContent=L('contact_text');$('foot').textContent=D.footer;
  $('logo').src=D.logo;$('aimg').src=D.about_image;
- R.style.setProperty('--g','url("'+D.hero_image+'")');
- const g=$('grid');g.textContent='';
- (D.products||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
+ $('himg').src=D.hero_image;$('st').textContent=L('services_title');
+ [['grid','products'],['sgrid','services']].forEach(function(z){const g=$(z[0]);g.textContent='';
+ (D[z[1]]||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
   const i=document.createElement('img');i.alt='';i.src=p.image;const d=document.createElement('div');
   const h=document.createElement('h3');h.textContent=ar?p.title_ar:p.title_en;
   const q=document.createElement('p');q.textContent=ar?p.text_ar:p.text_en;
-  d.append(h,q);c.append(i,d);g.append(c)});
+  d.append(h,q);c.append(i,d);g.append(c)})});
  const l=$('links');l.textContent='';
  [['https://wa.me/'+D.whatsapp,'WhatsApp: '+D.whatsapp_label,1],['mailto:'+D.email,D.email,1],[D.facebook,'Facebook'],[D.instagram,'Instagram'],[D.youtube,'YouTube']].forEach(x=>{
   if(!x[0]||/^(https:\/\/wa.me\/|mailto:)$/.test(x[0]))return;
