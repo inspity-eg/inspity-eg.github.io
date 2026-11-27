@@ -52,5 +52,18 @@ content:
       - {name: facebook, label: Facebook link, type: string}
       - {name: instagram, label: Instagram link, type: string}
       - {name: youtube, label: YouTube link, type: string}
+      - name: gallery
+        label: Gallery photos
+        type: object
+        list: true
+        fields:
+          - {name: image, label: Photo, type: image}
+      - {name: gallery_title_en, label: Gallery heading (English), type: string}
+      - {name: gallery_title_ar, label: Gallery heading (Arabic), type: string}
+      - {name: quote_title_en, label: Quote page heading (English), type: string}
+      - {name: quote_title_ar, label: Quote page heading (Arabic), type: string}
+      - {name: quote_text_en, label: Quote page text (English), type: text}
+      - {name: quote_text_ar, label: Quote page text (Arabic), type: text}
+      - {name: form_email, label: Email that receives quote requests, type: string}
       - {name: logo, label: Logo, type: image}
       - {name: footer, label: Footer text, type: string}
