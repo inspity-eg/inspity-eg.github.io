@@ -1,6 +1,6 @@
 {
-  "logo": "/images/logo.jpg",
-  "hero_image": "/images/gift.jpg",
+  "logo": "/images/1-logo.jpg",
+  "hero_image": "/images/2-gift.jpg",
   "slogan": "Your Vision. Our Signature.",
   "hero_en": "Custom printing and branded giveaways, made with attention to every detail.",
   "hero_ar": "طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.",
@@ -8,28 +8,28 @@
   "products_title_ar": "ما نصنعه",
   "products": [
     {
-      "image": "/images/box.jpg",
+      "image": "/images/3-box.jpg",
       "title_en": "Giveaway boxes",
       "title_ar": "بوكسات الهدايا",
       "text_en": "Notebook, pen, card holder and keychain, engraved with your name or logo.",
       "text_ar": "نوت بوك وقلم وحامل كروت وميدالية، بحفر اسمك أو شعارك."
     },
     {
-      "image": "/images/calendar.jpg",
+      "image": "/images/4-calendar.jpg",
       "title_en": "Calendars",
       "title_ar": "التقويمات",
       "text_en": "Desk and wall calendars that keep your brand in view all year.",
       "text_ar": "تقويمات مكتب وحائط تبقي علامتك أمام العميل طوال السنة."
     },
     {
-      "image": "/images/set.jpg",
+      "image": "/images/5-set.jpg",
       "title_en": "Notebooks and pens",
       "title_ar": "نوت بوك وأقلام",
       "text_en": "Custom covers, coated pages and all printing solutions.",
       "text_ar": "أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة."
     }
   ],
-  "about_image": "/images/gift.jpg",
+  "about_image": "/images/2-gift.jpg",
   "about_title_en": "Who we are",
   "about_title_ar": "من نحن",
   "about_text_en": "Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.",
