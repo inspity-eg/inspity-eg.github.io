@@ -22,8 +22,8 @@ nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:6p
 .stripes{display:flex;gap:6px;margin:18px 0}
 .stripes i{display:block;width:34px;height:7px;transform:skewX(-20deg)}
 .stripes i:nth-child(1){background:var(--s1)}.stripes i:nth-child(2){background:var(--s2)}.stripes i:nth-child(3){background:var(--s3)}
-.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g) center/cover}
-[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g) center/cover}
+.hero{min-height:min(100vh,560px);display:flex;align-items:center;padding:100px 6vw 60px;background:linear-gradient(90deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g,none) center/cover}
+[dir=rtl] .hero{background:linear-gradient(270deg,rgba(var(--ov),.95) 35%,rgba(var(--ov),.35)),var(--g,none) center/cover}
 .hero h1{font-size:clamp(40px,7vw,80px);line-height:1.15;font-weight:600;max-width:11em}
 .hero p{color:var(--mut);max-width:34em;margin-top:14px;font-size:18px}
 section{padding:90px 6vw}
@@ -49,43 +49,44 @@ html[data-theme=light] .links a:hover{color:var(--acc)}
 </style>
 </head>
 <body>
-<nav><div class="b"><img data-i="logo" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
+<nav><div class="b"><img id="logo" alt="">INSPITY</div><div class="tools"><button id="theme" aria-label="theme">☀</button><button id="lang">العربية</button></div></nav>
 <header class="hero"><div>
-<h1 dir="ltr" class="slogan">Your Vision. Our Signature.</h1>
+<h1 dir="ltr" class="slogan" id="slogan"></h1>
 <div class="stripes"><i></i><i></i><i></i></div>
-<p data-en="Custom printing and branded giveaways, made with attention to every detail." data-ar="طباعة مخصصة وهدايا دعائية بعلامتك، بتفاصيل مدروسة.">Custom printing and branded giveaways, made with attention to every detail.</p>
+<p id="hero"></p>
 </div></header>
-<section id="products">
-<h2 data-en="What we make" data-ar="ما نصنعه">What we make</h2>
-<div class="grid">
-<div class="card"><img data-i="box" alt=""><div><h3 data-en="Giveaway boxes" data-ar="بوكسات الهدايا">Giveaway boxes</h3><p data-en="Notebook, pen, card holder and keychain, engraved with your name or logo." data-ar="نوت بوك وقلم وحامل كروت وميدالية، بحفر اسمك أو شعارك.">Notebook, pen, card holder and keychain, engraved with your name or logo.</p></div></div>
-<div class="card"><img data-i="calendar" alt=""><div><h3 data-en="Calendars" data-ar="التقويمات">Calendars</h3><p data-en="Desk and wall calendars that keep your brand in view all year." data-ar="تقويمات مكتب وحائط تبقي علامتك أمام العميل طوال السنة.">Desk and wall calendars that keep your brand in view all year.</p></div></div>
-<div class="card"><img data-i="set" alt=""><div><h3 data-en="Notebooks and pens" data-ar="نوت بوك وأقلام">Notebooks and pens</h3><p data-en="Custom covers, coated pages and all printing solutions." data-ar="أغلفة مخصصة وصفحات مطلية وكل حلول الطباعة.">Custom covers, coated pages and all printing solutions.</p></div></div>
-</div></section>
-<section class="about">
-<img data-i="gift" alt="">
-<div><h2 data-en="Who we are" data-ar="من نحن">Who we are</h2>
-<p data-en="Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity." data-ar="انسبيتي علامة للطباعة والدعاية. نساعد الشركات على تحويل الهدية إلى توقيع يمثلها، بأي كمية.">Inspity is a printing and advertising brand. We help companies turn a gift into a signature, in any quantity.</p></div>
-</section>
-<section class="contact" id="contact">
-<h2 data-en="Contact" data-ar="تواصل معنا">Contact</h2>
-<p data-en="Tell us about your brand and we will prepare a proposal." data-ar="حدثنا عن علامتك ونجهز لك عرضًا.">Tell us about your brand and we will prepare a proposal.</p>
-<div class="links">
-<a href="https://wa.me/201026832972" dir="ltr">WhatsApp: +20 102 683 2972</a>
-<a href="mailto:inspity.eg@gmail.com" dir="ltr">inspity.eg@gmail.com</a>
-<a href="https://www.facebook.com/share/18vySZu6VG/">Facebook</a>
-<a href="https://www.instagram.com/inspity.eg">Instagram</a>
-<a href="https://www.youtube.com/@Inspity">YouTube</a>
-</div></section>
-<footer>© 2026 Inspity</footer>
+<section id="products"><h2 id="pt"></h2><div class="grid" id="grid"></div></section>
+<section class="about"><img id="aimg" alt=""><div><h2 id="at"></h2><p id="atx"></p></div></section>
+<section class="contact" id="contact"><h2 id="ct"></h2><p id="ctx"></p><div class="links" id="links"></div></section>
+<footer id="foot"></footer>
 <script>
 const t=document.getElementById('theme'),R=document.documentElement;
 function setT(x){R.dataset.theme=x;t.textContent=x==='dark'?'☀':'☾';try{localStorage.setItem('th',x)}catch(e){}}
 setT((function(){try{return localStorage.getItem('th')||'dark'}catch(e){return 'dark'}})());
 t.onclick=()=>setT(R.dataset.theme==='dark'?'light':'dark');
-const b=document.getElementById('lang');let ar=false;
-b.onclick=()=>{ar=!ar;document.documentElement.lang=ar?'ar':'en';document.documentElement.dir=ar?'rtl':'ltr';
-document.querySelectorAll('[data-en]').forEach(e=>e.textContent=ar?e.dataset.ar:e.dataset.en);
-b.textContent=ar?'English':'العربية'}
+const b=document.getElementById('lang');let ar=false,D=null;
+const $=id=>document.getElementById(id);
+function L(k){return D[k+(ar?'_ar':'_en')]}
+function render(){
+ if(!D)return;
+ $('slogan').textContent=D.slogan;$('hero').textContent=L('hero');
+ $('pt').textContent=L('products_title');$('at').textContent=L('about_title');$('atx').textContent=L('about_text');
+ $('ct').textContent=L('contact_title');$('ctx').textContent=L('contact_text');$('foot').textContent=D.footer;
+ $('logo').src=D.logo;$('aimg').src=D.about_image;
+ R.style.setProperty('--g','url("'+D.hero_image+'")');
+ const g=$('grid');g.textContent='';
+ (D.products||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
+  const i=document.createElement('img');i.alt='';i.src=p.image;const d=document.createElement('div');
+  const h=document.createElement('h3');h.textContent=ar?p.title_ar:p.title_en;
+  const q=document.createElement('p');q.textContent=ar?p.text_ar:p.text_en;
+  d.append(h,q);c.append(i,d);g.append(c)});
+ const l=$('links');l.textContent='';
+ [['https://wa.me/'+D.whatsapp,'WhatsApp: '+D.whatsapp_label,1],['mailto:'+D.email,D.email,1],[D.facebook,'Facebook'],[D.instagram,'Instagram'],[D.youtube,'YouTube']].forEach(x=>{
+  if(!x[0]||/^(https:\/\/wa.me\/|mailto:)$/.test(x[0]))return;
+  const a=document.createElement('a');a.href=x[0];a.textContent=x[1];if(x[2])a.dir='ltr';l.append(a)});
+ b.textContent=ar?'English':'العربية';
+}
+b.onclick=()=>{ar=!ar;R.lang=ar?'ar':'en';R.dir=ar?'rtl':'ltr';render()};
+fetch('data/site.json?v='+Date.now()).then(r=>r.json()).then(j=>{D=j;render()});
 </script>
-<script src="images-a.js"></script><script src="images-b.js"></script><script src="images-c.js"></script></body></html>
+</body></html>
