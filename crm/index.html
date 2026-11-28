@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html><head><base target="_top"><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap');
+:root{--bg:#16181c;--bg2:#2a2f37;--tx:#f0f1f3;--mut:#a3a9b3;--bd:#3b414b;--s1:#00a1de;--s2:#1b3a6b;--s3:#e2001a;--acc:#1c9be6;--blue:#00a1de;--red:#e2001a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:'Jost','Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400}
+body{min-height:100vh}
+h1,h2,h3,.h{font-family:'Cormorant Garamond',serif;font-weight:600}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 90px}
+.brand{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.logo{font-weight:700;letter-spacing:.2em;font-size:20px}
+.stripe{display:flex;gap:6px;margin:10px 0 8px;direction:ltr}.stripe i{display:block;width:34px;height:7px;transform:skewX(-20deg)}.stripe i:nth-child(1){background:var(--s1)}.stripe i:nth-child(2){background:var(--s2)}.stripe i:nth-child(3){background:var(--s3)}
+.slogan{color:var(--mut);font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;letter-spacing:.02em}
+.tabs{display:flex;gap:6px;margin:16px 0;background:var(--bg2);border:1px solid var(--bd);border-radius:30px;padding:4px}
+.tab{flex:1;text-align:center;padding:9px 4px;border-radius:26px;color:var(--mut);font-weight:500;font-size:14px;cursor:pointer}
+.tab.on{background:var(--acc);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.st{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:12px 10px;text-align:center}
+.st b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.1;font-weight:600}.st span{font-size:11px;color:var(--mut);letter-spacing:.08em;text-transform:uppercase}
+.st.due b{color:var(--red)}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:10px}
+.row{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.2}.sub{color:var(--mut);font-size:13.5px;margin-top:2px}
+.pill{font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px;background:rgba(28,155,230,.16);color:#5cc0f5;white-space:nowrap;letter-spacing:.03em}
+.pill.Replied,.pill.Meeting,.pill.Won{background:rgba(70,210,130,.16);color:#58e29a}.pill.Lost,.pill.Not\ now{background:rgba(255,255,255,.08);color:var(--mut)}.pill.New{background:rgba(255,255,255,.1);color:#d4d6da}
+.pill.Bounced{background:rgba(226,0,26,.16);color:#ff6b7a}
+.due-t{color:#ff6b7a;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+button,.btn{font:inherit;font-size:14px;font-weight:500;border:1px solid var(--bd);background:none;color:var(--tx);padding:8px 16px;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block}
+button.p{background:var(--acc);border:0;color:#fff}
+button.r{background:rgba(226,0,26,.15);border-color:rgba(226,0,26,.45);color:#ff8a95}
+input,select,textarea{width:100%;font:inherit;font-size:15px;color:var(--tx);background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:11px 14px;margin:5px 0;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+select option{color:#000}
+label{font-size:12px;color:var(--mut);letter-spacing:.06em}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:flex-end;justify-content:center;z-index:9}
+.modal.on{display:flex}
+.sheet{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:var(--bg);border:1px solid var(--bd);border-radius:18px 18px 0 0;padding:18px}
+@media(min-width:700px){.modal{align-items:center}.sheet{border-radius:18px}}
+.h{font-size:26px;margin:0 0 8px}
+.tl{border-left:2px solid var(--bd);margin:8px 0 0 6px;padding-left:12px}.tl div{margin-bottom:10px;font-size:14px}.tl small{color:var(--mut)}
+.empty{color:var(--mut);text-align:center;padding:30px 0}
+.fab{position:fixed;right:18px;bottom:20px;width:56px;height:56px;border-radius:50%;font-size:28px;padding:0;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.lock{max-width:340px;margin:18vh auto;text-align:center}
+.err{color:#ff8a93;font-size:13px;min-height:18px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--bd);padding:10px 18px;border-radius:30px;display:none;font-size:14px;z-index:20}
+@media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr)}}
+</style><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#16181c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Inspity CRM"><link rel="apple-touch-icon" href="icon-192.png"><script src="config.js"></script><title>Inspity CRM</title></head><body>
+<div id="app" class="wrap"></div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeM()"><div class="sheet" id="sheet"></div></div>
+<div id="toast" class="toast"></div>
+<script>
+var API=(window.API_URL||''), __jn=0;
+var PIN=sessionStorage.getItem('pin')||'', S=null, tab='today', q='', fs='All';
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function toast(t){var e=$('toast');e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},2200)}
+function jsonp(body,cb,fail){
+  var name='__jcb'+(++__jn), done=false;
+  window[name]=function(r){done=true;try{delete window[name]}catch(e){}cb(r)};
+  var s=document.createElement('script');
+  s.src=API+'?api=1&cb='+name+'&d='+encodeURIComponent(JSON.stringify(body))+'&t='+Date.now();
+  s.onerror=function(){if(done)return;done=true;fail&&fail({message:'network'})};
+  document.head.appendChild(s);
+  setTimeout(function(){if(done)return;done=true;fail&&fail({message:'timeout'})},20000);
+}
+function call(action,p,cb){jsonp({pin:PIN,action:action,p:p||{}},function(r){if(r&&r.error){toast(r.error);if(r.error==='Wrong PIN'){PIN='';sessionStorage.removeItem('pin');lock()}return}cb&&cb(r)},function(e){toast('Error: '+((e&&e.message)||'network'))})}
+function head(){return '<div class="brand"><div><div class="logo">INSPITY</div><div class="stripe"><i></i><i></i><i></i></div><div class="slogan">Your Vision. Our Signature.</div></div><div class="pill">CRM</div></div>'}
+function lock(){
+  jsonp({action:'status'},function(s){
+    var first=!s.hasPin;
+    $('app').innerHTML=head()+'<div class="lock card"><div class="h">'+(first?'Set your PIN':'Enter PIN')+'</div><input id="pin" type="password" inputmode="numeric" placeholder="PIN" autofocus>'+(first?'<div class="sub">Choose at least 4 digits. Only you will know it.</div>':'')+'<div class="err" id="perr"></div><button class="p" style="width:100%" onclick="go('+first+')">'+(first?'Save PIN':'Open')+'</button></div>';
+    $('pin').addEventListener('keydown',function(e){if(e.key==='Enter')go(first)});
+  },function(e){toast('Error: '+((e&&e.message)||'network'))});
+}
+function go(first){var v=$('pin').value;if(!v)return;PIN=v;
+  if(first){call('setpin',{},function(){sessionStorage.setItem('pin',PIN);load()})}
+  else{sessionStorage.setItem('pin',PIN);load()}}
+function load(cb){call('state',{},function(r){S=r;render();cb&&cb()})}
+function today(){return S.today}
+function due(c){return c.nextFollowUp&&c.nextFollowUp<=today()&&c.status!=='Lost'&&c.status!=='Won'&&c.status!=='Not now'&&c.status!=='Bounced'}
+function render(){
+  var cl=S.clients,emailed=cl.filter(function(c){return +c.emailCount>0}).length,rep=cl.filter(function(c){return c.replied}).length,dueN=cl.filter(due).length;
+  var h=head()+'<div class="tabs"><div class="tab '+(tab=='today'?'on':'')+'" onclick="tab=\'today\';render()">Follow-ups'+(dueN?' ('+dueN+')':'')+'</div><div class="tab '+(tab=='clients'?'on':'')+'" onclick="tab=\'clients\';render()">Clients</div><div class="tab '+(tab=='log'?'on':'')+'" onclick="tab=\'log\';render()">Email log</div></div>';
+  h+='<div class="stats"><div class="st"><b>'+cl.length+'</b><span>Clients</span></div><div class="st"><b>'+emailed+'</b><span>Emailed</span></div><div class="st"><b>'+rep+'</b><span>Replied</span></div><div class="st due"><b>'+dueN+'</b><span>Due now</span></div></div>';
+  if(tab=='today')h+=viewToday();else if(tab=='clients')h+=viewClients();else h+=viewLog();
+  h+='<button class="fab p" onclick="addM()">+</button>';
+  var keep=document.activeElement&&document.activeElement.id==='q';
+  $('app').innerHTML=h;
+  if(keep){var e=$('q');e.focus();e.setSelectionRange(e.value.length,e.value.length)}
+}
+function card(c){
+  var d=due(c);
+  return '<div class="card" onclick="detail(\''+c.id+'\')"><div class="row"><div><div class="name">'+esc(c.company)+'</div><div class="sub">'+esc([c.contact,c.email].filter(Boolean).join(' Â· '))+'</div></div><span class="pill '+esc(c.status)+'">'+esc(c.status)+'</span></div>'
+   +'<div class="sub" style="margin-top:6px">'+(+c.emailCount?'Emails sent: '+c.emailCount+(c.lastEmail?' Â· last '+c.lastEmail:''):'No email sent yet')+(c.nextFollowUp?' Â· <span class="'+(d?'due-t':'')+'">follow-up '+c.nextFollowUp+'</span>':'')+'</div></div>';
+}
+function viewToday(){
+  var l=S.clients.filter(due).sort(function(a,b){return a.nextFollowUp<b.nextFollowUp?-1:1});
+  var fresh=S.clients.filter(function(c){return c.status==='New'&&c.email});
+  var h=l.length?'':'<div class="empty">No follow-ups due. Nice.</div>';
+  l.forEach(function(c){
+    h+='<div class="card"><div onclick="detail(\''+c.id+'\')"><div class="row"><div><div class="name">'+esc(c.company)+'</div><div class="sub">'+esc([c.contact,c.email].filter(Boolean).join(' Â· '))+'</div></div><span class="pill '+esc(c.status)+'">'+esc(c.status)+'</span></div><div class="sub" style="margin-top:6px"><span class="due-t">Due '+c.nextFollowUp+'</span> Â· last email '+(c.lastEmail||'-')+'</div></div>'
+    +'<div class="btns"><button class="p" onclick="sentM(\''+c.id+'\')">Email sent</button><button onclick="replyM(\''+c.id+'\')">Got reply</button><button onclick="deferM(\''+c.id+'\')">Defer</button>'+(c.email?'<a class="btn" href="mailto:'+esc(c.email)+'">Email</a>':'')+'</div></div>';
+  });
+  if(fresh.length)h+='<div class="sub" style="margin:16px 4px 8px">NOT EMAILED YET ('+fresh.length+')</div>'+fresh.slice(0,15).map(card).join('');
+  return h;
+}
+function viewClients(){
+  var opts=['All'].concat(S.statuses);
+  var h='<input id="q" placeholder="Search company, contact, email" value="'+esc(q)+'" oninput="q=this.value;render()"><select onchange="fs=this.value;render()">'+opts.map(function(o){return '<option'+(o==fs?' selected':'')+'>'+o+'</option>'}).join('')+'</select>';
+  var l=S.clients.filter(function(c){
+    if(fs!=='All'&&c.status!==fs)return false;
+    return !q||(c.company+' '+c.contact+' '+c.email+' '+c.industry).toLowerCase().indexOf(q.toLowerCase())>=0});
+  l.sort(function(a,b){return a.company.toLowerCase()<b.company.toLowerCase()?-1:1});
+  return h+(l.length?l.map(card).join(''):'<div class="empty">No clients here yet. Tap + to add.</div>');
+}
+function viewLog(){
+  var l=S.emails.slice().reverse();
+  if(!l.length)return '<div class="empty">Nothing logged yet.</div>';
+  return l.slice(0,200).map(function(e){return '<div class="card"><div class="row"><div class="name">'+esc(e.company)+'</div><span class="pill '+(e.type=='Reply'?'Replied':'')+'">'+esc(e.type)+'</span></div><div class="sub">'+esc(e.date)+(e.subject?' Â· '+esc(e.subject):'')+'</div>'+(e.note?'<div style="margin-top:6px;font-size:14px">'+esc(e.note)+'</div>':'')+'</div>'}).join('');
+}
+function openM(h){$('sheet').innerHTML=h;$('modal').className='modal on'}
+function closeM(){$('modal').className='modal'}
+function byId(id){return S.clients.filter(function(c){return c.id===id})[0]}
+function val(id){return $(id).value.trim()}
+function done(msg){closeM();load(function(){toast(msg)})}
+function addM(){openM('<div class="h">Add client</div><label>Company *</label><input id="a1"><label>Contact person</label><input id="a2"><label>Email</label><input id="a3" type="email"><label>Phone</label><input id="a4" type="tel"><label>Industry</label><input id="a5"><label>Notes</label><textarea id="a6" rows="2"></textarea><div class="btns"><button class="p" onclick="addGo()">Save</button><button onclick="impM()">Paste many</button><button onclick="closeM()">Cancel</button></div>')}
+function addGo(){call('addClient',{company:val('a1'),contact:val('a2'),email:val('a3'),phone:val('a4'),industry:val('a5'),notes:val('a6')},function(){done('Client added')})}
+function impM(){openM('<div class="h">Paste many clients</div><div class="sub">One per line: Company, email, contact, phone (extra parts optional)</div><textarea id="i1" rows="8" placeholder="Acme Co, info@acme.com, Mr. Ali"></textarea><label>Industry (optional)</label><input id="i2"><div style="margin:8px 0"><label><input type="checkbox" id="i3" style="width:auto;margin-right:8px" onchange="$(\'i4w\').style.display=this.checked?\'block\':\'none\'">Mark all as already emailed today</label></div><div id="i4w" style="display:none"><label>Email subject sent</label><input id="i4"><label>Follow up after (days)</label><input id="i5" type="number" value="7"></div><div class="btns"><button class="p" onclick="impGo()">Import</button><button onclick="closeM()">Cancel</button></div>')}
+function impGo(){var ms=$('i3').checked;call('importClients',{text:$('i1').value,industry:val('i2'),markSent:ms,subject:ms?val('i4'):'',followDays:ms?val('i5'):7},function(r){done(r.added+' added'+(r.skipped?', '+r.skipped+' skipped':''))})}
+function sentM(id){var c=byId(id);openM('<div class="h">Email sent</div><div class="sub">'+esc(c.company)+'</div><label>Subject</label><input id="s1"><label>Note</label><textarea id="s2" rows="2"></textarea><label>Follow up after (days)</label><input id="s3" type="number" value="7"><div class="btns"><button class="p" onclick="sentGo(\''+id+'\')">Save</button><button onclick="closeM()">Cancel</button></div>')}
+function sentGo(id){call('logEmail',{id:id,subject:val('s1'),note:val('s2'),followDays:val('s3')},function(){done('Logged')})}
+function replyM(id){var c=byId(id);openM('<div class="h">Got a reply</div><div class="sub">'+esc(c.company)+'</div><label>What did they say?</label><textarea id="r1" rows="3"></textarea><label>Next follow-up date (optional)</label><input id="r2" type="date"><div class="btns"><button class="p" onclick="replyGo(\''+id+'\')">Save</button><button onclick="closeM()">Cancel</button></div>')}
+function replyGo(id){call('logReply',{id:id,note:val('r1'),nextFollowUp:val('r2')},function(){done('Reply logged')})}
+function deferM(id){openM('<div class="h">Defer follow-up</div><div class="btns"><button onclick="deferGo(\''+id+'\',3)">3 days</button><button onclick="deferGo(\''+id+'\',7)">1 week</button><button onclick="deferGo(\''+id+'\',14)">2 weeks</button><button onclick="deferGo(\''+id+'\',30)">1 month</button></div><label>Or pick a date</label><input id="d1" type="date"><div class="btns"><button class="p" onclick="deferDate(\''+id+'\')">Set date</button><button onclick="closeM()">Cancel</button></div>')}
+function deferGo(id,n){call('defer',{id:id,days:n},function(){done('Deferred')})}
+function deferDate(id){if(!val('d1'))return;call('defer',{id:id,date:val('d1')},function(){done('Deferred')})}
+function detail(id){
+  var c=byId(id),hist=S.emails.filter(function(e){return e.clientId===id}).reverse();
+  var h='<div class="row"><div class="h">'+esc(c.company)+'</div><span class="pill '+esc(c.status)+'">'+esc(c.status)+'</span></div>';
+  h+='<div class="sub">'+esc([c.contact,c.industry].filter(Boolean).join(' Â· '))+'</div><div class="btns">'
+   +(c.email?'<a class="btn" href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a>':'')+(c.phone?'<a class="btn" href="tel:'+esc(c.phone)+'">Call</a><a class="btn" target="_blank" href="https://wa.me/'+esc(c.phone.replace(/[^0-9]/g,'').replace(/^0/,'20'))+'">WhatsApp</a>':'')+'</div>';
+  h+='<div class="btns"><button class="p" onclick="sentM(\''+id+'\')">Email sent</button><button onclick="replyM(\''+id+'\')">Got reply</button><button onclick="deferM(\''+id+'\')">Defer</button></div>';
+  h+='<label style="display:block;margin-top:12px">Status</label><select id="e_st" onchange="saveF(\''+id+'\')">'+S.statuses.map(function(s){return '<option'+(s==c.status?' selected':'')+'>'+s+'</option>'}).join('')+'</select>';
+  h+='<label>Next follow-up</label><input id="e_nf" type="date" value="'+esc(c.nextFollowUp)+'" onchange="saveF(\''+id+'\')">';
+  h+='<label>Notes</label><textarea id="e_no" rows="2" onchange="saveF(\''+id+'\')">'+esc(c.notes)+'</textarea>';
+  h+='<div class="btns"><button onclick="editM(\''+id+'\')">Edit details</button><button class="r" onclick="delGo(\''+id+'\')">Delete</button><button onclick="closeM()">Close</button></div>';
+  h+='<div class="sub" style="margin-top:14px">HISTORY</div><div class="tl">'+(hist.length?hist.map(function(e){return '<div><b>'+esc(e.type)+'</b> <small>'+esc(e.date)+'</small>'+(e.subject?'<br>'+esc(e.subject):'')+(e.note?'<br><small>'+esc(e.note)+'</small>':'')+'</div>'}).join(''):'<div><small>Nothing yet</small></div>')+'</div>';
+  openM(h);
+}
+function saveF(id){call('updateClient',{id:id,status:$('e_st').value,nextFollowUp:$('e_nf').value,notes:$('e_no').value},function(){load(function(){toast('Saved')})})}
+function editM(id){var c=byId(id);openM('<div class="h">Edit details</div><label>Company</label><input id="a1" value="'+esc(c.company)+'"><label>Contact</label><input id="a2" value="'+esc(c.contact)+'"><label>Email</label><input id="a3" value="'+esc(c.email)+'"><label>Phone</label><input id="a4" value="'+esc(c.phone)+'"><label>Industry</label><input id="a5" value="'+esc(c.industry)+'"><div class="btns"><button class="p" onclick="editGo(\''+id+'\')">Save</button><button onclick="closeM()">Cancel</button></div>')}
+function editGo(id){call('updateClient',{id:id,company:val('a1'),contact:val('a2'),email:val('a3'),phone:val('a4'),industry:val('a5')},function(){done('Saved')})}
+function delGo(id){if(confirm('Delete this client?'))call('deleteClient',{id:id},function(){done('Deleted')})}
+if(PIN)load();else lock();
+</script></body></html>
