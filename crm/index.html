@@ -51,7 +51,7 @@ label{font-size:12px;color:var(--mut);letter-spacing:.06em}
 <div id="modal" class="modal" onclick="if(event.target===this)closeM()"><div class="sheet" id="sheet"></div></div>
 <div id="toast" class="toast"></div>
 <script>
-var API=(window.API_URL||''), __jn=0;
+var API='https://script.google.com/macros/s/AKfycbyIHGwbEvpM7CF7e20wmOu_cvZ8rRFNFEm4o4hv_30XPGP3FMvfh0BgoapVQVoaASal/exec', __jn=0;
 var PIN=sessionStorage.getItem('pin')||'', S=null, tab='today', q='', fs='All';
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
